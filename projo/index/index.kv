@@ -1,0 +1,109 @@
+<FlatButton@ButtonBehavior+Label>:
+    font_size: 20
+
+<IndexWindow>:
+    id: main_win
+    orientation: 'vertical'
+    spacing: 10
+    space_x: self.size[0] / 4
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source: 'index/f1.png'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: main_win.space_x, 10
+        Label:
+            id: sp4
+            size_hint_y: None
+            height: 60
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: (0,0,0,.4)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+            orientation: 'vertical'
+            spacing: 10
+            size_hint_y:None
+            height: 300
+
+            Label:
+                id: welcome
+                size_hint_y: None
+                height: 60
+                font_size: 28
+                text: 'TalantA'
+            Label:
+                id: description
+                size_hint_y: None
+                height: 20
+                font_size: 14
+                italic: True
+                text: 'Where talent meets opportunity'
+            Label:
+                id: sp3
+                size_hint_y: None
+                height: 50
+
+
+
+            GridLayout:
+                cols: 2
+                spacing: 10
+                padding: 10
+                Label:
+                    id: login_label
+                    text: 'registered user:'
+                Label:
+                    id: sign_up_label
+                    text: 'new user:'
+                FlatButton:
+                    id: login_btn
+                    text:'Login'
+                    background_normal: ''
+                    color: (0,1,0,1)
+                    on_release: root.login_btn_clicked()
+
+                FlatButton:
+                    id: signup_btn
+                    text: 'Sign Up'
+                    background_normal:''
+                    color: (0,0,1,1)
+                    on_release: root.signup_btn_clicked()
+
+
+
+           # FlatButton:
+           #     id: login_btn
+           #    text:'Login'
+           #     background_normal: ''
+           #     color: (0,1,0,1)
+           #     on_release: root.login_btn_clicked()
+           # Label:
+           #     id: sp5
+#
+           # Label:
+           #     id: sign_up_prompt
+           #     text: 'Are you a new user? Then sign up below'
+           #     size_hint_y: None
+           #     height: 20
+           # FlatButton:
+           #     id: signup_btn
+           #     text: 'Sign Up'
+           #     background_normal:''
+           #     color: (0,0,1,1)
+           #     on_release: root.signup_btn_clicked()
+            #Label:
+            #    id: sp
+            #    size_hint_y: None
+            #    height: 40
+
+        Label:
+            id: sp2
+

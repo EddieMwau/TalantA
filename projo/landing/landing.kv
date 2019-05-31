@@ -1,0 +1,146 @@
+<FlatButton@ButtonBehavior+Label>:
+    font_size: 16
+
+<ColoredLabel@Label>:
+    font_size: '48sp'
+    color: (.6, .6, .6, 1)
+    canvas.before:
+        Color:
+            rgb: (.9, .9, .9)
+        Rectangle:
+            pos: self.x + sp(2), self.y + sp(2)
+            size: self.width - sp(4), self.height - sp(4)
+
+<LandingWindow>:
+    id: main_win
+    orientation: 'vertical'
+    spacing: 10
+    space_x: self.size[0] / 6
+    canvas.before:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    BoxLayout:
+        size_hint_y: None
+        height: 50
+        canvas.before:
+            Color:
+                rgba: (0,.5,1,1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: 'TalantArt'
+            bold: True
+            size_hint_x: .6
+
+        FlatButton:
+            text: "Home"
+            size_hint_x: .1
+        FlatButton:
+            text: "Favorites"
+            size_hint_x: .1
+        FlatButton:
+            text: "Profile"
+            size_hint_x: .1
+        FlatButton:
+            text: "Logout"
+            size_hint_x: .1
+            on_release: self.parent.parent.current = 'scr_la'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: main_win.space_x, 10
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            BoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: (.6,.5,1,1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                size_hint_y: None
+                height: '48dp'
+
+                Label:
+                    size_hint_x: .2
+                    text: ''
+                    id: btnloop
+                    canvas.before:
+                        Color:
+                            rgba: (0,.5,1,1)
+                        Ellipse:
+                            size: self.size
+                            pos: self.pos
+                            source: 'landing/f5.jpg'
+
+                Label:
+                    text: 'User 1'
+                    id: btnloop
+
+                Label:
+                    size_hint_x: .3
+
+                FlatButton:
+                    size_hint_x: .3
+                    text: 'Details'
+
+            Carousel:
+                id: carousel
+
+                ColoredLabel:
+                    #text: 'Slide 0'
+                    canvas.before:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'landing/f1.jpg'
+                ColoredLabel:
+                    #text: 'Slide 1'
+                    canvas.before:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'landing/f2.jpg'
+
+                ColoredLabel:
+                    #text: 'Slide 2'
+                    canvas.before:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'landing/f3.jpg'
+            BoxLayout:
+                id: bottom_label
+                size_hint_y: None
+                height: '48dp'
+                canvas.before:
+                    Color:
+                        rgba: (0,.5,1,1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                FlatButton:
+                    text: 'Like'
+                    size_hint_x: .2
+                Label:
+                    size_hint_x: .1
+
+                FlatButton:
+                    text: "Favorite"
+                    size_hint_x: .2
+                Label:
+                    size_hint_x: .1
+                FlatButton:
+                    text: 'Follow'
+                    size_hint_x: .2
+                Label:
+                    size_hint_x: .1
